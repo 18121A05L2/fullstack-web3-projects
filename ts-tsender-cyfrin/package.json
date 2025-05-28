@@ -3,25 +3,33 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "anvil": "anvil --load-state anvilInitialState.json --block-time 5",
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "handleApprove": "cast send 0x5FbDB2315678afecb367f032d93F642f64180aa3 'approve(address,uint256)' 0x5FbDB2315678afecb367f032d93F642f64180aa3 1 --rpc-url http://127.0.0.1:8545 --account one_anvil -- --broadcast"
   },
   "dependencies": {
+    "@rainbow-me/rainbowkit": "^2.2.5",
+    "@tanstack/react-query": "^5.77.0",
+    "@wagmi/core": "^2.17.2",
+    "next": "15.1.8",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.1.8"
+    "viem": "^2.30.1",
+    "wagmi": "^2.15.4"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
     "eslint": "^9",
     "eslint-config-next": "15.1.8",
-    "@eslint/eslintrc": "^3"
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5",
+    "vitest": "^3.1.4"
   }
 }
